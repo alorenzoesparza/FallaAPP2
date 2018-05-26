@@ -1,4 +1,5 @@
 ﻿using FallaAPP.Services;
+using FallaAPP.Views;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -145,9 +146,9 @@ namespace FallaAPP.ViewModels
                 return;
             }
 
-            var mainViewModel = MainViewModel.GetInstance();
+            MainViewModel.GetInstance().Acts = new ActsViewModel();
 
-            mainViewModel.Token = token;
+            //mainViewModel.Token = token;
             //mainViewModel.Acts = new ActsViewModel();
             //await Application.Current.MainPage.Navigation.PushAsync(new ActsPage());
 
@@ -155,6 +156,8 @@ namespace FallaAPP.ViewModels
             this.IsEnabled = true;
             this.Email = string.Empty;
             this.Password = string.Empty;
+
+            await Application.Current.MainPage.Navigation.PushAsync(new ActsPage());
         }
 
         public ICommand RegisterCommand { get; set; }

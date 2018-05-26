@@ -7,26 +7,38 @@ namespace FallaAPP
 {
     public partial class App : Application
 	{
-		public App ()
-		{
-			InitializeComponent();
+        #region Propiedades
+        public static object Navigator { get; internal set; }
+        #endregion
 
-			MainPage = new LoginPage();
-		}
+        #region Constructor
+        public App()
+        {
+            InitializeComponent();
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+            MainPage = new NavigationPage(new MasterPage());
+            MainPage = new MasterPage();
+            //MainPage = new NavigationPage(new LoginPage());
+        }
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        #endregion
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        #region Metodos
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+
+        #endregion
+    }
 }

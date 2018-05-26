@@ -162,4 +162,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\falla.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_configuracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_salir.png" />
+  </ItemGroup>
 </Project>
